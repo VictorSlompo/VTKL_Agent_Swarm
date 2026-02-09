@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "project": "VTKL Agent Swarm",
+  "squads": {
+    "alpha": {
+      "name": "Squad Alpha",
+      "focus": "Backend & API",
+      "channel": "#squad-alpha",
+      "agents": ["backend-agent", "api-agent", "database-agent"]
+    },
+    "beta": {
+      "name": "Squad Beta", 
+      "focus": "Frontend & UX",
+      "channel": "#squad-beta",
+      "agents": ["frontend-agent", "ux-agent", "style-agent"]
+    },
+    "gamma": {
+      "name": "Squad Gamma",
+      "focus": "QA & Integration",
+      "channel": "#squad-gamma",
+      "agents": ["qa-agent", "integration-agent", "deploy-agent"]
+    }
+  },
+  "orchestration": {
+    "program-manager": {
+      "channel": "#swarm-coordination",
+      "model": "claude-sonnet-4"
+    },
+    "flow-coordinators": {
+      "channels": ["#squad-alpha", "#squad-beta", "#squad-gamma"],
+      "model": "claude-sonnet-4"
+    },
+    "estimator": {
+      "trigger": "on-demand",
+      "model": "claude-sonnet-4"
+    },
+    "verifier": {
+      "trigger": "on-demand", 
+      "model": "claude-sonnet-4"
+    }
+  },
+  "execution": {
+    "runtime": "claude-code",
+    "commit_pattern": "feat|fix|docs|test|refactor",
+    "branch_pattern": "cycle-{N}/{squad}/{task-id}"
+  }
+}
