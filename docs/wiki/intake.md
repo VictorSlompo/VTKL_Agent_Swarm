@@ -98,7 +98,7 @@ Complete pipeline for submitting new projects with automatic file processing.
 | Blob Storage | Vercel Blob (swarm-uploads) |
 | Transcription | OpenAI Whisper-1 |
 | State Directory | `swarm/state/projects/` |
-| Default Language | Portuguese (pt) |
+| Default Language | English (en) |
 
 ## Cost
 
